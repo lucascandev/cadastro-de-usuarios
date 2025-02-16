@@ -57,106 +57,46 @@ def excluir_usuario():
 
     messagebox.showwarning("Erro", "Usuário não encontrado!")
 
-# Função para exibir o menu inicial
-def exibir_menu():
-    menu_janela = Toplevel(app)
-    menu_janela.title("Menu")
-    menu_janela.geometry("300x200")
-    menu_janela.grid_rowconfigure(0, weight=1)
-    menu_janela.grid_rowconfigure(5, weight=1)
-    menu_janela.grid_columnconfigure(0, weight=1)
-    menu_janela.grid_columnconfigure(1, weight=1)
-
-    Label(menu_janela, text="Escolha uma opção:").grid(row=0, column=0, columnspan=2, padx=10, pady=10)
-    Button(menu_janela, text="Criar Novo Cadastro", command=abrir_tela_cadastro).grid(row=1, column=0, columnspan=2, padx=10, pady=5)
-    Button(menu_janela, text="Excluir Cadastro", command=abrir_tela_exclusao).grid(row=2, column=0, columnspan=2, padx=10, pady=5)
-    Button(menu_janela, text="Editar Cadastro", command=abrir_tela_edicao).grid(row=3, column=0, columnspan=2, padx=10, pady=5)
-    Button(menu_janela, text="Ver Lista de Cadastros", command=exibir_usuarios).grid(row=4, column=0, columnspan=2, padx=10, pady=5)
-
-# Função para abrir a tela de cadastro
-def abrir_tela_cadastro():
-    global entry_nome, entry_email, entry_telefone, entry_senha
-    tela_cadastro = Toplevel(app)
-    tela_cadastro.title("Cadastro de Usuários")
-    tela_cadastro.geometry("400x300")
-    tela_cadastro.grid_rowconfigure(0, weight=1)
-    tela_cadastro.grid_rowconfigure(5, weight=1)
-    tela_cadastro.grid_columnconfigure(0, weight=1)
-    tela_cadastro.grid_columnconfigure(1, weight=1)
-
-    Label(tela_cadastro, text="Nome:").grid(row=0, column=0, padx=10, pady=5)
-    entry_nome = Entry(tela_cadastro)
-    entry_nome.grid(row=0, column=1, padx=10, pady=5)
-
-    Label(tela_cadastro, text="Email:").grid(row=1, column=0, padx=10, pady=5)
-    entry_email = Entry(tela_cadastro)
-    entry_email.grid(row=1, column=1, padx=10, pady=5)
-
-    Label(tela_cadastro, text="Telefone:").grid(row=2, column=0, padx=10, pady=5)
-    entry_telefone = Entry(tela_cadastro)
-    entry_telefone.grid(row=2, column=1, padx=10, pady=5)
-
-    Label(tela_cadastro, text="Senha:").grid(row=3, column=0, padx=10, pady=5)
-    entry_senha = Entry(tela_cadastro, show='*')
-    entry_senha.grid(row=3, column=1, padx=10, pady=5)
-
-    Button(tela_cadastro, text="Cadastrar", command=cadastrar_usuario).grid(row=4, column=0, columnspan=2, padx=10, pady=10)
-
-# Função para abrir a tela de exclusão
-def abrir_tela_exclusao():
-    global entry_email
-    tela_exclusao = Toplevel(app)
-    tela_exclusao.title("Excluir Cadastro")
-    tela_exclusao.geometry("400x150")
-    tela_exclusao.grid_rowconfigure(0, weight=1)
-    tela_exclusao.grid_rowconfigure(2, weight=1)
-    tela_exclusao.grid_columnconfigure(0, weight=1)
-    tela_exclusao.grid_columnconfigure(1, weight=1)
-
-    Label(tela_exclusao, text="Email do Usuário a Excluir:").grid(row=0, column=0, padx=10, pady=10)
-    entry_email = Entry(tela_exclusao)
-    entry_email.grid(row=0, column=1, padx=10, pady=10)
-
-    Button(tela_exclusao, text="Excluir", command=excluir_usuario).grid(row=1, column=0, columnspan=2, padx=10, pady=10)
-
-# Função para abrir a tela de edição
-def abrir_tela_edicao():
-    global entry_nome, entry_email, entry_telefone, entry_senha
-    tela_edicao = Toplevel(app)
-    tela_edicao.title("Editar Cadastro")
-    tela_edicao.geometry("400x300")
-    tela_edicao.grid_rowconfigure(0, weight=1)
-    tela_edicao.grid_rowconfigure(5, weight=1)
-    tela_edicao.grid_columnconfigure(0, weight=1)
-    tela_edicao.grid_columnconfigure(1, weight=1)
-
-    Label(tela_edicao, text="Nome:").grid(row=0, column=0, padx=10, pady=5)
-    entry_nome = Entry(tela_edicao)
-    entry_nome.grid(row=0, column=1, padx=10, pady=5)
-
-    Label(tela_edicao, text="Email (para buscar):").grid(row=1, column=0, padx=10, pady=5)
-    entry_email = Entry(tela_edicao)
-    entry_email.grid(row=1, column=1, padx=10, pady=5)
-
-    Label(tela_edicao, text="Telefone:").grid(row=2, column=0, padx=10, pady=5)
-    entry_telefone = Entry(tela_edicao)
-    entry_telefone.grid(row=2, column=1, padx=10, pady=5)
-
-    Label(tela_edicao, text="Senha:").grid(row=3, column=0, padx=10, pady=5)
-    entry_senha = Entry(tela_edicao, show='*')
-    entry_senha.grid(row=3, column=1, padx=10, pady=5)
-
-    Button(tela_edicao, text="Editar", command=editar_usuario).grid(row=4, column=0, columnspan=2, padx=10, pady=10)
-
 # Criando a interface gráfica com Tkinter
 app = Tk()
 app.title("Sistema de Cadastro de Usuários")
-app.geometry("400x200")
-app.grid_rowconfigure(0, weight=1)
-app.grid_rowconfigure(2, weight=1)
-app.grid_columnconfigure(0, weight=1)
-app.grid_columnconfigure(1, weight=1)
+app.geometry("500x400")
+app.configure(bg='#f0f0f0')
 
-Button(app, text="Menu Inicial", command=exibir_menu).grid(row=0, column=0, columnspan=2, padx=10, pady=10)
+# Título
+Label(app, text="Sistema de Cadastro de Usuários", font=("Helvetica", 16, "bold"), bg='#f0f0f0', fg='#333').pack(pady=10)
 
-app.mainloop()  # Iniciando o loop principal da aplicação
+# Campos de entrada
+frame = Frame(app, bg='#f0f0f0')
+frame.pack(pady=20)
+
+Label(frame, text="Nome:", bg='#f0f0f0', fg='#333').grid(row=0, column=0, padx=10, pady=5)
+entry_nome = Entry(frame, width=30)
+entry_nome.grid(row=0, column=1, padx=10, pady=5)
+
+Label(frame, text="Email:", bg='#f0f0f0', fg='#333').grid(row=1, column=0, padx=10, pady=5)
+entry_email = Entry(frame, width=30)
+entry_email.grid(row=1, column=1, padx=10, pady=5)
+
+Label(frame, text="Telefone:", bg='#f0f0f0', fg='#333').grid(row=2, column=0, padx=10, pady=5)
+entry_telefone = Entry(frame, width=30)
+entry_telefone.grid(row=2, column=1, padx=10, pady=5)
+
+Label(frame, text="Senha:", bg='#f0f0f0', fg='#333').grid(row=3, column=0, padx=10, pady=5)
+entry_senha = Entry(frame, width=30, show='*')
+entry_senha.grid(row=3, column=1, padx=10, pady=5)
+
+# Botões
+button_frame = Frame(app, bg='#f0f0f0')
+button_frame.pack(pady=20)
+
+Button(button_frame, text="Cadastrar", command=cadastrar_usuario, bg='#4CAF50', fg='white', width=15).grid(row=0, column=0, padx=10)
+Button(button_frame, text="Excluir", command=excluir_usuario, bg='#f44336', fg='white', width=15).grid(row=0, column=1, padx=10)
+Button(button_frame, text="Editar", command=editar_usuario, bg='#2196F3', fg='white', width=15).grid(row=1, column=0, padx=10, pady=10)
+Button(button_frame, text="Ver Cadastros", command=exibir_usuarios, bg='#FF9800', fg='white', width=15).grid(row=1, column=1, padx=10, pady=10)
+
+# Créditos
+Label(app, text="Criado por lucascandev", font=("Helvetica", 10), bg='#f0f0f0', fg='#333').pack(side=LEFT, padx=10, pady=10)
+Label(app, text="GitHub: https://github.com/lucascandev", font=("Helvetica", 10), bg='#f0f0f0', fg='#333').pack(side=RIGHT, padx=10, pady=10)
+
+app.mainloop()
