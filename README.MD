@@ -1,4 +1,4 @@
-## Cadastro de Usuários v0.01 ~~ Lucas
+## Cadastro de Usuários v0.01
 
 O intuito do projeto é criar um sistema de cadastro de usuários, onde o usuário pode adicionar, visualizar e gerenciar informações de outros usuários, tudo isso em linguagem Python.
 
