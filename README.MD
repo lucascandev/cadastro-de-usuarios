@@ -10,4 +10,10 @@ O usuário pode cadastrar novos usuários, visualizar a lista de usuários cadas
 - Interface:
 A ideia é criar uma interface gráfica usando Tkinter para tornar o projeto mais dinâmico e fácil de usar.
 
+## Visual e funcionamento do software:
+
+<p align="center">
+   <img src="https://github.com/lucascandev/cadastro-de-usuarios/blob/main/assets/cadastro-de-usuarios.png" alt="#01" width="600">
+</p>
+
 > Esse projeto tende a chegar mais próximo desses pontos informados a cima.
