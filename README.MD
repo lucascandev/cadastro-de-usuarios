@@ -13,11 +13,7 @@ A ideia é criar uma interface gráfica usando Tkinter para tornar o projeto mai
 ## Visual e funcionamento do software:
 
 <p align="center">
-   <img src="https://github.com/lucascandev/task-manager-python/blob/main/assets/aplica%C3%A7%C3%A3o.png" alt="#01" width="600">
-</p>
-
-<p align="center">
-   <img src="https://github.com/lucascandev/task-manager-python/blob/main/assets/aplica%C3%A7%C3%A3o2.png" alt="#01" width="600">
+   <img src="https://github.com/lucascandev/cadastro-de-usuarios/blob/main/assets/cadastro-de-usuarios.png" alt="#01" width="600">
 </p>
 
 > Esse projeto tende a chegar mais próximo desses pontos informados a cima.
